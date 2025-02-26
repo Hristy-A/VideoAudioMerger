@@ -1,39 +1,21 @@
 using ElectronNET.API;
-using ElectronNET.API.Entities;
+using VideoAudioMerger.Services;
+using VideoAudioMerger.Windows;
+using VideoAudioMerger.Windows.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddElectron();
 builder.WebHost.UseElectron(args);
 
+var pageUrlResolver = new HttpPageUrlResolver();
+builder.Services.AddSingleton<IPageUrlResolver>(pageUrlResolver);
 
-if (HybridSupport.IsElectronActive)
-{
-    var win = await Electron.WindowManager.CreateWindowAsync(new BrowserWindowOptions
-    {
-        Height = 700,
-        Width = 800,
-        MinHeight = 700,
-        MinWidth = 600,
-        Center = true,
-        Show = false,
-    });
-    
-    win.RemoveMenu();
-
-    win.WebContents.OnDidFinishLoad += () =>
-    {
-        win.Show();
-    };
-    
-    win.OnClosed += () =>
-    {
-        Electron.App.Quit();
-    };
-}
+var mainWindow = new MainWindow(pageUrlResolver);
+await mainWindow.Open();
 
 var app = builder.Build();
 
-app.UseFileServer();
+app.UseStaticFiles();
 
 app.Run();

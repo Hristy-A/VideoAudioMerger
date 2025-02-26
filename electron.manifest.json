@@ -1,15 +1,15 @@
 {
-  "executable": "merge",
+  "executable": "VideoAudioMerger",
   "splashscreen": {
     "imageFile": ""
   },
-  "name": "merge",
+  "name": "VideoAudioMerger",
   "author": "",
   "singleInstance": false,
   "environment": "Production",
   "build": {
-    "appId": "com.merge.app",
-    "productName": "merge",
+    "appId": "com.VideoAudioMerger.app",
+    "productName": "VideoAudioMerger",
     "copyright": "Copyright © 2020",
     "buildVersion": "1.0.0",
     "compression": "maximum",

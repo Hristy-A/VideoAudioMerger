@@ -2,6 +2,8 @@
 bin
 obj
 .idea
+build
+wwwroot
 
 # Logs
 logs

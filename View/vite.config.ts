@@ -7,10 +7,15 @@ import replaceImportWithRequire from './vite-plugins/replace-import-with-require
 
 export default ({ mode }: { mode: string }) => {
   return defineConfig({
+    root: 'src',
+    publicDir: '../public',
     build: {
       rollupOptions: {
         input: getPages(),
       },
+    },
+    server: {
+      open: '/pages/main/main.html',
     },
     resolve: {
       alias: {
@@ -22,9 +27,9 @@ export default ({ mode }: { mode: string }) => {
 };
 
 function getPages(): Record<string, string> {
-  const pages = readdirSync(resolve(__dirname, 'pages'))
-    .filter((file) => file.endsWith('.html'))
-    .map((file) => file.replace('.html', ''));
+  const pages = readdirSync(resolve(__dirname, 'src/pages'));
 
-  return Object.fromEntries(pages.map((page) => [page, resolve(__dirname, `pages/${page}.html`)]));
+  return Object.fromEntries(
+    pages.map((page) => [page, resolve(__dirname, `src/pages/${page}/${page}.html`)]),
+  );
 }

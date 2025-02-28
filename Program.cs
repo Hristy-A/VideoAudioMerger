@@ -11,11 +11,13 @@ builder.WebHost.UseElectron(args);
 var pageUrlResolver = new HttpPageUrlResolver();
 builder.Services.AddSingleton<IPageUrlResolver>(pageUrlResolver);
 
-var mainWindow = new MainWindow(pageUrlResolver);
-await mainWindow.Open();
-
 var app = builder.Build();
 
 app.UseStaticFiles();
 
+var mainWindow = new MainWindow(pageUrlResolver);
+await mainWindow.Open();
+
 app.Run();
+
+

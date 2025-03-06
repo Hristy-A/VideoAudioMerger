@@ -2,7 +2,8 @@ import react from '@vitejs/plugin-react';
 import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import Inspect from 'vite-plugin-inspect';
+import checker from 'vite-plugin-checker';
+import inspect from 'vite-plugin-inspect';
 import replaceImportWithRequire from './vite-plugins/replace-import-with-require';
 
 export default ({ mode }: { mode: string }) => {
@@ -22,7 +23,16 @@ export default ({ mode }: { mode: string }) => {
         '~': resolve('src/'),
       },
     },
-    plugins: [react(), replaceImportWithRequire(), ...(mode === 'inspect' ? [Inspect()] : [])],
+    plugins: [
+      react(),
+      checker({
+        typescript: {
+          tsconfigPath: 'tsconfig.app.json',
+        },
+      }),
+      replaceImportWithRequire(),
+      ...(mode === 'inspect' ? [inspect()] : []),
+    ],
   });
 };
 

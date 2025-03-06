@@ -18,6 +18,11 @@ app.UseStaticFiles();
 var mainWindow = new MainWindow(pageUrlResolver);
 await mainWindow.Open();
 
+AppDomain.CurrentDomain.UnhandledException += (_, args) =>
+{
+    Console.WriteLine(args.ExceptionObject);
+};
+
 app.Run();
 
 

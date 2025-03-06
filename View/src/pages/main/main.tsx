@@ -1,11 +1,8 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from '~/app';
+import { renderPage } from '~/render-page';
+import { WorkingList } from '~/widgets/working-list';
 
-import '~/global.css';
+const Main = () => {
+  return <WorkingList />;
+};
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+renderPage(<Main />);

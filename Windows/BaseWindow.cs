@@ -1,5 +1,6 @@
 ﻿using ElectronNET.API;
 using ElectronNET.API.Entities;
+using VideoAudioMerger.Windows.Events;
 using VideoAudioMerger.Windows.Exceptions;
 using VideoAudioMerger.Windows.Interfaces;
 
@@ -35,9 +36,17 @@ public abstract class BaseWindow : IWindow
         
         await win.WebContents.Session.ClearCacheAsync();
 
+        if (!options.Show)
+        {
+            win.WebContents.OnDidFinishLoad += () =>
+            {
+                win.Show();
+            };
+        }
+
         win.WebContents.OnDidFinishLoad += () =>
         {
-            win.Show();
+            Electron.IpcMain.Send(BrowserWindow, GlobalEventsKeys.RegisterWindowId, BrowserWindow.Id);
         };
     }
 

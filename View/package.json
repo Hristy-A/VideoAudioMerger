@@ -1,7 +1,7 @@
 {
   "name": "view",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +12,7 @@
     "serve": "serve dist"
   },
   "dependencies": {
+    "framer-motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -23,7 +24,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
-    "daisyui": "^4.12.24",
+    "daisyui": "^3.9.4",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
@@ -34,6 +35,7 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0",
+    "vite-plugin-checker": "^0.9.0",
     "vite-plugin-inspect": "^11.0.0"
   }
 }

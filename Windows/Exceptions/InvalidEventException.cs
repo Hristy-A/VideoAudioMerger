@@ -1,3 +1,3 @@
 ﻿namespace VideoAudioMerger.Windows.Exceptions;
 
-public class ElectronInactiveException: Exception;
+public class InvalidEventException: Exception;

@@ -19,8 +19,6 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      '@typescript-eslint/no-require-imports': false,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
 );

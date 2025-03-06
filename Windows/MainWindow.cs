@@ -1,5 +1,6 @@
 ﻿using ElectronNET.API;
 using ElectronNET.API.Entities;
+using VideoAudioMerger.Windows.Events;
 using VideoAudioMerger.Windows.Interfaces;
 
 namespace VideoAudioMerger.Windows;
@@ -10,7 +11,7 @@ public class MainWindow(IPageUrlResolver pageUrlResolver) : BaseWindow(pageUrlRe
 
     public override Task Open()
     {
-        return Open(new BrowserWindowOptions()
+        return Open(new BrowserWindowOptions
         {
             Height = 700,
             Width = 800,
@@ -27,16 +28,17 @@ public class MainWindow(IPageUrlResolver pageUrlResolver) : BaseWindow(pageUrlRe
         
         BrowserWindow?.RemoveMenu();
         
-        RegisterHandlers();
+        RegisterEvents();
     }
 
-    private void RegisterHandlers()
+    private void RegisterEvents()
     {
         BrowserWindow!.OnClosed += () =>
         {
             Electron.App.Quit();
         };
         
-        Electron.IpcMain.On("message", Console.WriteLine);
+        var globalEvents = new GlobalEvents();
+        globalEvents.RegisterEvents();
     }
 }

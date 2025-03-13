@@ -3,33 +3,42 @@
     <h1 style="font-weight: bold">VideoAudioMerger</h1>
 </div>
 
-[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://docs.abblix.com/docs/technical-requirements)
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![language](https://img.shields.io/badge/language-C%23%2C%20TS-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Hristy-A/VideoAudioMerger?include_prereleases&label=release)](https://github.com/Yuvix25/ReHUD/releases/latest)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Hristy-A/VideoAudioMerger?include_prereleases&label=release)](https://github.com/Hristy-A/VideoAudioMerger/releases/latest)
 
 ⭐ Star this project on GitHub please — it motivates a lot! 😊
 
 ## Table of Contents
-- [About](#-about)
-- [Stack](#-stack)
-- [Commands](#-commands)
-- [License](#-license)
+
+- [Table of Contents](#table-of-contents)
+- [🚀 About](#-about)
+- [📦 Stack](#-stack)
+- [💻 Commands](#-commands)
+- [📃 License](#-license)
 
 ## 🚀 About
+
 VideoAudioMerger is a program for merging video and external audio. It uses ffmpeg for conversion and ffprobe to get information about the file.
 
 ## 📦 Stack
-- Electron.NET - to create for desktop application 
+
+- Electron.NET - to create for desktop application
 - React - for UI
 - FFmpeg - for merging files
 
 ## 💻 Commands
+
 You can find all possible Electron.NET commands and options in the [main repository](https://github.com/ElectronNET/Electron.NET).
+
 1. To get started, download the basic nuget package for Electron.NET:
+
 ```ps1
 dotnet add package ElectronNET.API
 ```
+
 or
+
 ```ps1
 PM> Install-Package ElectronNET.API
 ```

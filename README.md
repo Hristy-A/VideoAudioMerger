@@ -3,7 +3,7 @@
     <h1 style="font-weight: bold">VideoAudioMerger</h1>
 </div>
 
-[![.NET](https://img.shields.io/badge/.NET-9.0-512BD4)](https://docs.abblix.com/docs/technical-requirements)
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://docs.abblix.com/docs/technical-requirements)
 [![language](https://img.shields.io/badge/language-C%23%2C%20TS-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Hristy-A/VideoAudioMerger?include_prereleases&label=release)](https://github.com/Yuvix25/ReHUD/releases/latest)
 

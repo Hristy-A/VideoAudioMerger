@@ -13,10 +13,6 @@ body {
   user-select: none;
 }
 
-#root {
-  height: 100vh;
-}
-
 *:focus,
 *:focus-visible {
   outline: none !important;

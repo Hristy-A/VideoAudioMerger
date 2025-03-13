@@ -6,13 +6,26 @@
     <AssemblyName>VideoAudioMerger</AssemblyName>
     <RootNamespace>VideoAudioMerger</RootNamespace>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <Version>0.0.1</Version>
+    <Authors>Hristy1</Authors>
+    <Description>The program for combining video and audio into a final video file</Description>
+    <PackageProjectUrl>https://github.com/Hristy-A/VideoAudioMerger</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Hristy-A/VideoAudioMerger/blob/main/LICENSE</PackageLicenseUrl>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <FileVersion>0.0.1</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ElectronNET.API" Version="23.6.2" />
+    <PackageReference Include="FFMpegCore" Version="5.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ffmpeg\*.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Update="electron.manifest.json">
@@ -23,6 +36,6 @@
     <Folder Include="Core\" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd View &amp;&amp; npm run build" />
+    <Exec Command="powershell -ExecutionPolicy Bypass -File &quot;$(ProjectDir)PreBuild.ps1&quot; &amp;&amp; cd View &amp;&amp; npm run build" />
   </Target>
 </Project>

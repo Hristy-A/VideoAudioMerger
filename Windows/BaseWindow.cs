@@ -1,7 +1,8 @@
 ﻿using ElectronNET.API;
 using ElectronNET.API.Entities;
-using VideoAudioMerger.Windows.Events;
-using VideoAudioMerger.Windows.Exceptions;
+using VideoAudioMerger.Events;
+using VideoAudioMerger.Exceptions;
+using VideoAudioMerger.Services;
 using VideoAudioMerger.Windows.Interfaces;
 
 namespace VideoAudioMerger.Windows;
@@ -30,6 +31,8 @@ public abstract class BaseWindow : IWindow
         {
             throw new WindowAlreadyOpenException();
         }
+
+        options.Icon = "wwwroot/icon.png";
         
         var win = await Electron.WindowManager.CreateWindowAsync(options, pageUrl);
         BrowserWindow = win;

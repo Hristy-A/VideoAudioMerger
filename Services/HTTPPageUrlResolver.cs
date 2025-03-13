@@ -1,5 +1,4 @@
 ﻿using ElectronNET.API;
-using VideoAudioMerger.Windows.Interfaces;
 
 namespace VideoAudioMerger.Services;
 

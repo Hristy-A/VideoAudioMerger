@@ -1,10 +1,10 @@
 ﻿using ElectronNET.API;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using VideoAudioMerger.Windows.Exceptions;
+using VideoAudioMerger.Exceptions;
 
-namespace VideoAudioMerger.Windows.Events;
+namespace VideoAudioMerger.Events;
 
 public class Event
 {
@@ -25,7 +25,7 @@ public class Event
 public class Event<T> : Event where T : class 
 {
     public const string DataKey = "data";
-    public readonly T Data;
+    public readonly T Data = null!;
 
     public Event(object obj) : base(obj)
     {

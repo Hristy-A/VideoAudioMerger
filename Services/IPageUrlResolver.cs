@@ -1,4 +1,4 @@
-﻿namespace VideoAudioMerger.Windows.Interfaces;
+﻿namespace VideoAudioMerger.Services;
 
 public interface IPageUrlResolver
 {

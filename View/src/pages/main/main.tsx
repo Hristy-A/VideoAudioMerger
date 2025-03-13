@@ -1,8 +1,8 @@
 import { renderPage } from '~/render-page';
-import { WorkingList } from '~/widgets/working-list';
+import { Merger } from '~/widgets/merger';
 
 const Main = () => {
-  return <WorkingList />;
+  return <Merger />;
 };
 
 renderPage(<Main />);

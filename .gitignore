@@ -4,6 +4,7 @@ obj
 .idea
 build
 wwwroot
+ffmpeg
 
 # Logs
 logs

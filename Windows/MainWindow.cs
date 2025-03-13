@@ -1,6 +1,8 @@
 ﻿using ElectronNET.API;
 using ElectronNET.API.Entities;
-using VideoAudioMerger.Windows.Events;
+using VideoAudioMerger.Core;
+using VideoAudioMerger.Events;
+using VideoAudioMerger.Services;
 using VideoAudioMerger.Windows.Interfaces;
 
 namespace VideoAudioMerger.Windows;
@@ -13,10 +15,10 @@ public class MainWindow(IPageUrlResolver pageUrlResolver) : BaseWindow(pageUrlRe
     {
         return Open(new BrowserWindowOptions
         {
-            Height = 700,
             Width = 800,
-            MinHeight = 700,
-            MinWidth = 600,
+            Height = 700,
+            MinWidth = 700,
+            MinHeight = 600,
             Center = true,
             Show = false,
         });
@@ -35,6 +37,7 @@ public class MainWindow(IPageUrlResolver pageUrlResolver) : BaseWindow(pageUrlRe
     {
         BrowserWindow!.OnClosed += () =>
         {
+            MediaManager.DisposeMediaManager();
             Electron.App.Quit();
         };
         

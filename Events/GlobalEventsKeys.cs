@@ -1,4 +1,4 @@
-﻿namespace VideoAudioMerger.Windows.Events;
+﻿namespace VideoAudioMerger.Events;
 
 public static class GlobalEventsKeys
 {
@@ -14,4 +14,11 @@ public static class GlobalEventsKeys
     
     public const string SelectFiles = $"{PREFIX}select-files";
     public const string SelectFilesReply = $"{PREFIX}select-files-reply";
+
+    public const string OpenDirectory = $"{PREFIX}open-directory";
+    public const string OpenDirectoryReply = $"{PREFIX}open-directory-reply";
+
+    public const string MergeVideoAudio = $"{PREFIX}merge-video-audio";
+    public const string MergeVideoAudioProgress = $"{PREFIX}merge-video-audio-progress";
+    public const string MergeVideoAudioReply = $"{PREFIX}merge-video-audio-reply";
 }

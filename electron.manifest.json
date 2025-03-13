@@ -11,10 +11,20 @@
     "appId": "com.VideoAudioMerger.app",
     "productName": "VideoAudioMerger",
     "copyright": "Copyright © 2020",
-    "buildVersion": "1.0.0",
+    "buildVersion": "0.0.1",
     "compression": "maximum",
     "directories": {
       "output": "../../../bin/Desktop"
+    },
+    "win": {
+      "icon": "../../../wwwroot/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": true,
+      "license": "../../../LICENSE"
     },
     "extraResources": [
       {

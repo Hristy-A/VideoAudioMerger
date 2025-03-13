@@ -1,3 +1,3 @@
-﻿namespace VideoAudioMerger.Windows.Exceptions;
+﻿namespace VideoAudioMerger.Exceptions;
 
 public class WindowAlreadyOpenException: Exception;

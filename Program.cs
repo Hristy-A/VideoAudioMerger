@@ -1,7 +1,6 @@
 using ElectronNET.API;
 using VideoAudioMerger.Services;
 using VideoAudioMerger.Windows;
-using VideoAudioMerger.Windows.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +22,6 @@ AppDomain.CurrentDomain.UnhandledException += (_, args) =>
     Console.WriteLine(args.ExceptionObject);
 };
 
+Thread.CurrentThread.Priority = ThreadPriority.Highest;
+
 app.Run();
-
-

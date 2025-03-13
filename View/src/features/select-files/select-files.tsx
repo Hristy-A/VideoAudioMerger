@@ -1,19 +1,23 @@
-import { FileFilters, selectFiles } from '~/shared/electron-api';
+import { selectFiles } from '~/shared/electron-api';
+import { SelectFileOptions } from '~/shared/electron-api/types';
 
 interface SelectFilesProps {
+  label?: string;
+  selectFileOptions?: SelectFileOptions;
+  disabled?: boolean;
   onSelect: (files: string[]) => void;
 }
 
 export const SelectFiles = (props: SelectFilesProps) => {
-  const { onSelect } = props;
+  const { label = 'Select files', selectFileOptions, disabled, onSelect } = props;
 
   const handleClick = () => {
-    selectFiles({ filters: [FileFilters.Videos] }).then(onSelect);
+    selectFiles(selectFileOptions).then(onSelect);
   };
 
   return (
-    <button className="btn" onClick={handleClick}>
-      Select files
+    <button className="btn" disabled={disabled} onClick={handleClick}>
+      {label}
     </button>
   );
 };
